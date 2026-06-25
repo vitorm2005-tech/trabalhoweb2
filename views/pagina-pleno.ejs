@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"><title>Página Pleno / Sênior</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body class="has-background-light" style="min-height: 100vh; display: flex; align-items: center;">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-6">
+                <div class="box has-text-centered p-6">
+                    <span class="tag is-link is-light is-large mb-3">Acesso Concedido</span>
+                    <h1 class="title is-2 has-text-link">Área Pleno / Sênior</h1>
+                    <p class="subtitle is-5 has-text-grey mt-3">Você conseguiu acessar esta página porque seu nível atual mapeado no Token é: <strong><%= user.role.toUpperCase() %></strong></p>
+                    <hr>
+                    <a href="/dashboard" class="button is-link is-outlined">Voltar ao Painel Geral</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

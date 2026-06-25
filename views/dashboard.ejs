@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Controle</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body class="has-background-light" style="min-height: 100vh;">
+    
+    <nav class="navbar is-white is-spaced has-shadow" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <span class="navbar-item title is-4 mb-0 has-text-link">Área Restrita</span>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <form action="/logout" method="POST">
+                        <button type="submit" class="button is-danger is-outlined">Sair do Sistema</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <div class="box has-background-link-light p-5 mb-5">
+                <div class="level">
+                    <div class="level-left">
+                        <div>
+                            <h2 class="title is-4 has-text-link-dark">Olá, <%= user.email %>!</h2>
+                            <p class="subtitle is-6 has-text-grey-dark">Você está autenticado com sucesso.</p>
+                        </div>
+                    </div>
+                    <div class="level-right">
+                        <div class="has-text-right">
+                            <span class="heading has-text-grey">Nível de Acesso</span>
+                            <span class="tag is-warning is-large font-weight-bold has-text-black"><%= user.role.toUpperCase() %></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columns is-match-height mt-5">
+                <div class="column">
+                    <div class="card card-equal-height">
+                        <div class="card-content p-5">
+                            <p class="title is-4 has-text-dark">Página Pleno / Sênior</p>
+                            <p class="subtitle is-6 has-text-grey mb-5">Acesso liberado apenas para usuários de nível intermediário (Pleno) ou superior.</p>
+                            <a href="/pagina-pleno" class="button is-link is-fullwidth">Acessar Ambiente</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="column">
+                    <div class="card card-equal-height">
+                        <div class="card-content p-5">
+                            <p class="title is-4 has-text-danger">Página Exclusiva Sênior</p>
+                            <p class="subtitle is-6 has-text-grey mb-5">Ambiente crítico restrito apenas para o nível máximo do sistema (Sênior).</p>
+                            <a href="/pagina-senior" class="button is-danger is-light is-fullwidth">Acessar Ambiente</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</body>
+</html>
